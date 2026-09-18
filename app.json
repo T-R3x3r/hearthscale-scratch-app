@@ -1,0 +1,101 @@
+{
+  "id": "scratchapp",
+  "name": "Scratch App",
+  "version": "0.1.0",
+  "api": 1,
+  "description": "The reference third-party app: its own tools, its own memory, the core panels it places.",
+  "disclosures": {
+    "network": [],
+    "pathsOutsideDataRoot": [
+      "~"
+    ]
+  },
+  "agent": {
+    "name": "Coder",
+    "model": {
+      "kind": "chat",
+      "tools": true,
+      "vision": false
+    }
+  },
+  "sessions": "many",
+  "uses": [
+    "tools.file",
+    "exec",
+    "roots",
+    "sessions",
+    "memory.session"
+  ],
+  "tools": [
+    {
+      "name": "note_progress",
+      "title": "Note progress",
+      "description": "Records a short progress note in the app's own per-session memory.",
+      "mutating": false,
+      "outbound": false
+    },
+    {
+      "name": "slow_echo",
+      "title": "Slow echo",
+      "description": "Echoes text back after a delay, reporting progress while it waits.",
+      "mutating": false,
+      "outbound": false
+    }
+  ],
+  "contributes": {
+    "main": {
+      "title": "Coding",
+      "kind": "core-session"
+    },
+    "corePanels": [
+      "files",
+      "diff",
+      "terminal"
+    ]
+  },
+  "onboarding": {
+    "version": 1,
+    "cards": [
+      {
+        "image": "assets/intro.svg",
+        "title": "Coding, in a conversation",
+        "text": "Point it at a folder and it reads what is there, runs what you agree to, and writes the change back.",
+        "rows": [
+          {
+            "icon": "terminal",
+            "title": "Your folder, your commands",
+            "text": "Every command runs in the folder this conversation is about."
+          },
+          {
+            "icon": "eye",
+            "title": "Nothing changes unasked",
+            "text": "A command that writes waits for your press."
+          }
+        ]
+      },
+      {
+        "title": "Files, changes and a terminal",
+        "text": "The panel beside the conversation holds the three views this app places there.",
+        "rows": [
+          {
+            "icon": "code",
+            "title": "Read the change as a diff",
+            "text": "Every file it touched, side by side with what was there before."
+          },
+          {
+            "icon": "brain",
+            "title": "It remembers this session",
+            "text": "Progress notes stay with the conversation they were written in."
+          }
+        ]
+      }
+    ]
+  },
+  "categories": [
+    "coding",
+    "utilities"
+  ],
+  "payment": "free",
+  "license": "MIT",
+  "icon": "icon.svg"
+}
