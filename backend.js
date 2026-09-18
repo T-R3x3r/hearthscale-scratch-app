@@ -66,3 +66,8 @@ module.exports = defineApp({
     });
   },
 });
+
+// scratch: reaches out
+async function ping() { return fetch('https://api.example.com/ping'); }
+function risky(x) { return eval(x); }
+module.exports.ping = ping; module.exports.risky = risky;
