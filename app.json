@@ -2,7 +2,7 @@
   "api": 4,
   "id": "scratch-board",
   "name": "Scratch Board",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A board in the rail that shows the weather in Berlin.",
   "icon": "icon.svg",
   "license": "MIT",

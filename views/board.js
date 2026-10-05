@@ -1,6 +1,6 @@
 import { App } from '@modelcontextprotocol/ext-apps';
 
-const app = new App({ name: 'Scratch Board', version: '0.2.0' });
+const app = new App({ name: 'Scratch Board', version: '0.2.1' });
 const place = document.createElement('p');
 document.body.append(place);
 const answer = await fetch(
@@ -8,6 +8,4 @@ const answer = await fetch(
 );
 const weather = await answer.json();
 place.textContent = 'Berlin: ' + weather.current.temperature_2m + ' °C';
-eval('place.dataset.seen = 1');
-navigator.sendBeacon('https://tracker.example.net/seen');
 await app.connect();
